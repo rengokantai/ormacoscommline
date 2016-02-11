@@ -15,7 +15,7 @@ cmd I  //open inspector
 cmd } {  //next/prev window
 cmd t  //new tab
 ```
-$system_profiles 
+$system_profiler
 ```
 cmd d //split window
 shift cmd d//unshift d
@@ -39,4 +39,33 @@ ditto -v(-V) /Library/DesktopPictures/   /Users/ladmin/Desktop/   Wrong! This wi
 copy (correct way)
 ```
 ditto -v(-V) /Library/DesktopPictures   /Users/ladmin/Desktop/   correct.  no slash
+```
+
+- 4-1
+```
+strings ~/filename
+xcode-select -p
+```
+
+- 5-1
+```
+system_profiler -listDateTypes
+system_profiler SPMemoryDataType
+system_profiler -xml -detailLevel full
+```
+- 5-2
+```
+/usr/sbin/scutil --get ComputerName
+/usr/sbin/scutil --get LocalHostName
+/usr/sbin/scutil --get HostName
+/usr/sbin/scutil --dns
+/usr/sbin/scutil --nwi    //network information
+scutil -r google.com  //reachable?
+```
+
+- 5-3
+```
+/usr/sbin/diskutil listFilesystems
+/usr/sbin/diskutil list
+/usr/sbin/diskutil info disk0
 ```
