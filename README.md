@@ -69,3 +69,20 @@ scutil -r google.com  //reachable?
 /usr/sbin/diskutil list
 /usr/sbin/diskutil info disk0
 ```
+- 5-4
+```
+sudo /usr/sbin/systemsetup -getstartupdisk
+!! //last cmd
+sudo /usr/sbin/systemsetup -liststartupdisks
+sudo /usr/sbin/systemsetup -getdisplaysleep
+sudo /usr/sbin/systemsetup -getcomputername
+sudo /usr/sbin/systemsetup -setcomputername newname
+```
+
+- 5-5
+```
+sudo /usr/sbin/networksetup -listallnetworkservices
+sudo /usr/sbin/networksetup -listnetworkserviceorder
+sudo /usr/sbin/networksetup -listallhardwareports
+sudo /usr/sbin/networksetup -getmacaddress en0
+```
