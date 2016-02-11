@@ -86,3 +86,35 @@ sudo /usr/sbin/networksetup -listnetworkserviceorder
 sudo /usr/sbin/networksetup -listallhardwareports
 sudo /usr/sbin/networksetup -getmacaddress en0
 ```
+
+- 6-1
+```
+/usr/sbin/softwareupdate --help
+/usr/sbin/softwareupdate -l   //list all sw need to update
+/usr/sbin/softwareupdate -v -i swname  //update
+/usr/sbin/softwareupdate -v -i -a   // install all. need to restart computer
+```
+
+- 6-2
+power management
+```
+pmset -g live
+pmset -g cap
+pmset -g stats
+pmset -g logs
+pmset -g ups
+pmset -g everything
+sudo pmset -a key1 value1 key2 value2
+sudo pmset restoredefaults
+```
+- 6-3
+reset apple assistant
+```
+sudo rm /var/db/.AppleSetupDone
+```
+- 6-4
+create full install media set (download install OS X Yosemite.app first) erase first.
+```
+cd ~/Desktop/Instal\ OS\ X\ Yosemite.app/
+sudo ./createinstallmedia --volume /Volume/Untitled\ 1/ --applicationpath ~/Desktop/Instal\ OS\ X\ Yosemite.app
+
