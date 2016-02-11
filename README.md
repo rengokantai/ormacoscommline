@@ -117,4 +117,43 @@ create full install media set (download install OS X Yosemite.app first) erase f
 ```
 cd ~/Desktop/Instal\ OS\ X\ Yosemite.app/
 sudo ./createinstallmedia --volume /Volume/Untitled\ 1/ --applicationpath ~/Desktop/Instal\ OS\ X\ Yosemite.app
+```
+
+- 7-1
+Finder->Go->Utilities->Disk Utility  
+partition-> options-> MBR, apple partition map
+```
+diskutil list
+
+system_profiler SPStorageDataType
+```
+
+```
+cd /Volumes/
+```
+- 7-2 split
+```
+diskutil partitionDisk
+```
+```
+diskutil partitionDisk /dev/disk1 2 MBR fat32 MBR1 50% fat32 MBR2 R  (remainder)
+```
+
+split partition.(all data will be lost)
+```
+diskutil splitPartition
+```
+```
+diskutil splitPartition /dev/disk2s3 2 JHFS+ APM1 4G JHFS+ APM2 3.9G
+```
+
+```
+diskutil resizevolume  //does not destroy data
+```
+  
+- 7-3 merge partitions
+```
+diskutil mergePartitions fat32 MBR disk1s1 disk1s2
+diskutil mergePartitions jhfs+ APM disk2s3 disk2s4      //delete 2nd partition
+```
 
