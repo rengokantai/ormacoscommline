@@ -157,3 +157,23 @@ diskutil mergePartitions fat32 MBR disk1s1 disk1s2
 diskutil mergePartitions jhfs+ APM disk2s3 disk2s4      //delete 2nd partition
 ```
 
+- 7-4 mirror RAID
+```
+diskutil appleRAID create
+```
+```
+diskutil appleRAID create mirror example jhfs+ disk1 disk2
+```
+```
+appleRAID list
+```
+
+- 7-5 create stripe raid (better access time)
+```
+diskutil appleraid list
+diskutil appleraid delete name
+```
+```
+diskutil appleraid create stripe name jhfs+ disk1 disk2
+```
+
